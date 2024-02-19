@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\StudioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//admin routes---------------------------------------------------
+
+// Route::get('/studioform',[StudioController::class,'create'])->name('studio.create');
+// Route::post('/studioform',[StudioController::class,'store'])->name('studio.store');
+
+// Route::get('/studioindex',[StudioController::class,'index'])->name('studio.index');
+// Route::get('/studioedit',[StudioController::class,'edit'])->name('studio.edit');
+
+// Route::post('/studioupdate',[StudioController::class,'update'])->name('studio.update');
+// Route::post('/studiodelete',[StudioController::class,'destroy'])->name('studio.delete');
+Route::resource('studio', StudioController::class);
+
